@@ -1,6 +1,5 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -17,7 +16,19 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Tab 1</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <IonGrid>
+          <IonRow>
+            <IonCol><a href="/dollaz">Dollaz</a></IonCol>
+            <IonCol><a href="/shopping">Shopping</a></IonCol>
+            <IonCol>a</IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>a</IonCol>
+            <IonCol>a</IonCol>
+            <IonCol>a</IonCol>
+            <IonCol>a</IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
