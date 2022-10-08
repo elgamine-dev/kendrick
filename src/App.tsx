@@ -44,9 +44,9 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/apps" component={Tab1} />
-          <Route path="/apps/shopping" exact component={Shopping} />
-          <Route path="/apps/dollaz" exact component={Dollaz} />
+          <Route path="/apps" exact component={Tab1} />
+          <Route path="/apps/shopping" component={Shopping} />
+          <Route path="/apps/dollaz" component={Dollaz} />
           <Route path="/tab2" component={Tab2} exact={true} />
           <Route path="/tab2/details" component={Details} />
           <Route path="/tab3" component={Shopping} />
@@ -61,7 +61,7 @@ const App: React.FC = () => (
             <IonIcon icon={list} />
             <IonLabel>Todo</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/shopping">
+          <IonTabButton tab="tab3" href="/apps/shopping">
             <IonIcon icon={square} />
             <IonLabel>Debug</IonLabel>
           </IonTabButton>
