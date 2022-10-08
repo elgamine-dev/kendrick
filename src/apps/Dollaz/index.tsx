@@ -1,4 +1,4 @@
-import { IonCard, IonCardContent, IonContent, IonInput, IonItem, IonLabel, IonList } from '@ionic/react';
+import { IonCard, IonCardContent, IonContent, IonInput, IonItem, IonLabel, IonList, IonPage } from '@ionic/react';
 import React from 'react';
 import {evaluate} from 'mathjs';
 
@@ -51,31 +51,33 @@ const DollazContainer: React.FC<ContainerProps> = () => {
   const c = sum(hours)
 
   return (
-    <IonContent className="container">
-        <IonInput onIonChange={v => setInput(v?.detail?.value || "176")}/>
-        <IonCard>
-            <IonCardContent>
-                <IonList>
-                  <IonItem>
-                    <IonLabel>{cad(rate)} x {c.hours} hours</IonLabel>
-                      {cad(c.rawCad)}
-                  </IonItem>
-                  <IonItem>
-                    <IonLabel>{cad(rate)} x {c.hours} hours x {xchange}</IonLabel>
-                       {euro(c.rawEuro)}
-                  </IonItem>
-                  <IonItem>
-                    <IonLabel>URSAAF</IonLabel>
-                    {euro(c.taxes)}
-                  </IonItem>
-                  <IonItem>
-                    <IonLabel>Net</IonLabel>
-                     {euro(c.net)} ( {euro(c.revenu)} + {euro(c.conge)} )
-                  </IonItem>
-                </IonList>
-            </IonCardContent>
-        </IonCard>
-    </IonContent>
+    <IonPage>
+      <IonContent className="container">
+          <IonInput onIonChange={v => setInput(v?.detail?.value || "176")}/>
+          <IonCard>
+              <IonCardContent>
+                  <IonList>
+                    <IonItem>
+                      <IonLabel>{cad(rate)} x {c.hours} hours</IonLabel>
+                        {cad(c.rawCad)}
+                    </IonItem>
+                    <IonItem>
+                      <IonLabel>{cad(rate)} x {c.hours} hours x {xchange}</IonLabel>
+                        {euro(c.rawEuro)}
+                    </IonItem>
+                    <IonItem>
+                      <IonLabel>URSAAF</IonLabel>
+                      {euro(c.taxes)}
+                    </IonItem>
+                    <IonItem>
+                      <IonLabel>Net</IonLabel>
+                      {euro(c.net)} ( {euro(c.revenu)} + {euro(c.conge)} )
+                    </IonItem>
+                  </IonList>
+              </IonCardContent>
+          </IonCard>
+      </IonContent>
+    </IonPage>
   );
 };
 

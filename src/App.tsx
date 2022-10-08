@@ -13,7 +13,6 @@ import { IonReactRouter } from '@ionic/react-router';
 import { square, list, apps } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
 import Details from './pages/Details';
 import Shopping from './apps/Shopping';
 import Dollaz from './apps/Dollaz';
@@ -45,16 +44,16 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
+          <Route path="/apps" component={Tab1} />
+          <Route path="/apps/shopping" exact component={Shopping} />
+          <Route path="/apps/dollaz" exact component={Dollaz} />
           <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/shopping" component={Shopping} />
-          <Route path="/dollaz" component={Dollaz} />
           <Route path="/tab2/details" component={Details} />
-          <Route path="/tab3" component={Tab3} />
+          <Route path="/tab3" component={Shopping} />
           <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="apps" href="/apps">
             <IonIcon icon={apps} />
             <IonLabel>Apps</IonLabel>
           </IonTabButton>
